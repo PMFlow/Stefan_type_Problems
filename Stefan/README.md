@@ -12,4 +12,4 @@
 	used in the main codes. 
 - 'plot_c.m' plots the solution 'concentration.mat' of the main codes. 
 
-- 'm_Stefan.png' and 's_Stefan.png' are plots of the temperature- and diffusion front-solutions.
+- 'm_Stefan.png' and 's_Stefan.png' are plots of the temperature and diffusion front solutions.
