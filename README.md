@@ -5,7 +5,7 @@
 
 - 'Stefan' - classical Stefan problem
 
-- 'Stefan_kinetic' - stefan problem with a kinetic condition
+- 'Stefan_kinetic' - Stefan problem with a kinetic condition
 
 - 'Rubber' - diffusion in rubber
 
