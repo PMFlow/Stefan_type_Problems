@@ -1,4 +1,4 @@
-%%   diffusion in rubber 1D ~ [PEM_Surendra.pdf] - Dirichlet BC
+%%   Stefan problem with kinetic condition 1D - convergence w.r.t. the analytical solution
 %%   ======================
 clear all; close all
 tic
