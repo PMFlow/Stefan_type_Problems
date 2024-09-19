@@ -7,7 +7,7 @@ CT=0;
 Itest = 1;
 L2_c = zeros(5,1); eoc_c=zeros(4,1);
 L2_s = zeros(5,1); eoc_s=zeros(4,1);
-for iter = [25 50 100 200 400] % [50 100 200 400 800] % [100 200 400 800 1600] % 
+for iter = [25 50 100 200 400] 
 tic
     I = iter+1;
     a=0; b=1;
@@ -39,10 +39,10 @@ tic
         [c]=BGRW_1D(c0,I,dx,dt,q,alpha);
         % [c]=GRW_1D(c0,I,dx,dt,q,alpha,d,stepU);
         %% Boundary conditions
-        c(1)=T_0; % <===  Dirichlet BC left ~ Ref. [21]
+        c(1)=T_0; % <===  Dirichlet BC left ~ Ref. [Ögren, 2022]
         c(is)=0;
         %% Diffusion front
-        sc(it)=s0-(c(is)-c(is-1))/dx*dt; % (s-s0)/dt=-(c-c0)/dx ~ diffusion front ~ Ref. [21]
+        sc(it)=s0-(c(is)-c(is-1))/dx*dt; % (s-s0)/dt=-(c-c0)/dx ~ diffusion front ~ Ref. [Ögren, 2022]
         is=round(sc(it)/dx);
         c0=c; s0=sc(it); c(is)=0;
 
