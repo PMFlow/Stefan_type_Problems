@@ -1,4 +1,4 @@
-%%   GRW - Stefan problem ~ Magnus
+%%   GRW - Stefan problem - comparison with Ref. [21]
 %%   ======================
 
 clear all; close all
