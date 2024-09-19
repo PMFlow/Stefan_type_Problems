@@ -1,4 +1,4 @@
-%%   GRW - Stefan problem ~ Magnus - grid-convergence test
+%%   GRW - Stefan problem - grid-convergence test
 %%   ======================
 
 clear all; close all
