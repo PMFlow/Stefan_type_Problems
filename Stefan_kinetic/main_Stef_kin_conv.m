@@ -136,4 +136,4 @@ toc
                     % EOC_s : 9.98e-01 
                     % EOC_s : 9.99e-01 
                     % EOC_s : 1.00e+00 
-% Elapsed time is 458.003641 seconds = 7.6334 min.
+% Elapsed time is 458.003641 seconds = 5.7872 min.
