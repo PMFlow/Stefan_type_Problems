@@ -1,4 +1,4 @@
-%%   GRW - Stefan problem - comparison with Ref. [21]
+%%   GRW - Stefan problem - comparison with Ref. [Ögren, 2022]
 %%   ======================
 
 clear all; close all
@@ -36,7 +36,7 @@ for it=1:nT
     c(1)=uD; % <===  Dirichlet BC left ~ [Magnus]
     c(is)=0;
     %% Diffusion front
-    sc(it)=s0-(c(is)-c(is-1))/dx*dt; % (s-s0)/dt=-(c-c0)/dx ~ diffusion front ~ Ref. [21]
+    sc(it)=s0-(c(is)-c(is-1))/dx*dt; % (s-s0)/dt=-(c-c0)/dx ~ diffusion front ~ Ref. [Ögren, 2022]
     is=round(sc(it)/dx);
     c0=c; s0=sc(it); c(is)=0;
 
