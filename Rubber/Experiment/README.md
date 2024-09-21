@@ -10,3 +10,6 @@
 - 'c.png' and 's.png' are plots of the profile m(x,t) and diffusion front s(t).
 
 - 'plot_c_s_GRW_RW_FEM.m' compares the solutions c(x,t) and s(x,t) contained in .mat files.
+
+- 'comp_c.png' and 'comp_s.png' compare the solutions m(x,t) and s(t), respectively, obtained with
+  GRW, a sequential random walk (RWM), and a finite difference method (FEM).  
