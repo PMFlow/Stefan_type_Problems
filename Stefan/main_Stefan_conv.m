@@ -109,19 +109,19 @@ end
 % main_Stefan_conv
 % The space step is : 4.00e-02 
 % The time step is : 8.00e-04 
-% Elapsed time is 0.076764 seconds.
+                                % Elapsed time is 0.037863 seconds.
 % The space step is : 2.00e-02 
 % The time step is : 2.00e-04 
-% Elapsed time is 0.066054 seconds.
+                                % Elapsed time is 0.046779 seconds.
 % The space step is : 1.00e-02 
 % The time step is : 5.00e-05 
-% Elapsed time is 0.127952 seconds.
+                                % Elapsed time is 0.077310 seconds.
 % The space step is : 5.00e-03 
 % The time step is : 1.25e-05 
-% Elapsed time is 0.532853 seconds.
+                                % Elapsed time is 0.319349 seconds.
 % The space step is : 2.50e-03 
 % The time step is : 3.13e-06 
-% Elapsed time is 3.011082 seconds.
+                                % Elapsed time is 1.839702 seconds.
 % L2_c  : 6.52e-03 
 % L2_c  : 3.49e-03 
 % L2_c  : 1.84e-03 
@@ -140,5 +140,4 @@ end
                                 % EOC_s : 1.02e+00 
                                 % EOC_s : 1.03e+00 
                                 % EOC_s : 1.03e+00 
-% total CT =  3.82e+00>> 
-
+% total CT =  2.32e+00>> 
