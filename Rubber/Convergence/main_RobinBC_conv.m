@@ -15,7 +15,7 @@ a=0; b=1;
 dx = (b-a)/(I-1);
 x = a:dx:b;
 %% Parameters
-beta=1; bb=1; s00=0.1; cs0=1; H=1; sig=1; a0=1;
+beta=1; bb=1; s00=0.1; H=1; sig=1; a0=1;
 T=1e-3; 
 Tplot=[T/4 T/2 T]; 
 past=T/3;
@@ -30,7 +30,7 @@ s0=s00; mx=s0; c0=zeros(1,I); fc=zeros(1,I);
 Ec = @(t,x) (1-x/mx).^3*cos(t/T);
 Es = @(t) t/T/10-t^2/T^2/10+t^3/T^3/30+s00;
 %% Solution
-xs=0:dx:s0; is=length(xs); cs=cs0;
+xs=0:dx:s0; is=length(xs); 
 Ec0=(1-xs/mx).^3; 
 c0(1:is)=Ec0; 
 for it=1:nT
@@ -39,7 +39,6 @@ for it=1:nT
     xs=0:dx:mx; Ixs=length(xs);
     Ec0=(1-xs/mx).^3*cos(t/T); 
     [Efc,Eq2,Eq3]=Fc(t,xs,T,beta,b,H,0,s00,a0,sig); 
-    cs=Ec0(Ixs); 
     fc(1:Ixs)=Efc;    
     [fs]=Fs(t,T,0,s00,a0,sig);  
     [c]=BGRW_1D(c0,I,dx,dt,q,D);
