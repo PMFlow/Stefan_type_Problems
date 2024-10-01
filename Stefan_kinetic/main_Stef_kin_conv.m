@@ -13,7 +13,7 @@ a=0; b=1;
 dx = (b-a)/(I-1);
 x = a:dx:b;
 %% Parameters
-alpha = 0.1; cs0=0; D = 1; s00 = 0.1; 
+alpha = 0.1; D = 1; s00 = 0.1; 
 T=1; 
 Tplot=[T/4 T/2 T]; 
 past=T/3;
