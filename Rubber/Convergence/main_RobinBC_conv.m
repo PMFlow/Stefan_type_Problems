@@ -28,7 +28,7 @@ q=zeros(1,I);
 s0=s00; mx=s0; c0=zeros(1,I); fc=zeros(1,I); 
 %% manufactured solutions
 Ec = @(t,x) (1-x/mx).^3*cos(t/T);
-Es = @(t) t/T/10-t^2/T^2/10+t^3/T^3/30+s00;
+Es = @(t) s00*(t/T/10-t^2/T^2/10+t^3/T^3/30+1);
 %% Solution
 xs=0:dx:s0; is=length(xs); 
 Ec0=(1-xs/mx).^3; 
@@ -112,47 +112,47 @@ fprintf('total CT =  %0.2e',CT)
 % t = 1.000000e-03
 % The space step is : 1.00e-02 
 % The time step is : 5.00e-05 
-                                    % Elapsed time is 0.045562 seconds.
+                                    % Elapsed time is 0.045972 seconds.
 % t = 2.500000e-04
 % t = 5.000000e-04
 % t = 1.000000e-03
 % The space step is : 5.00e-03 
 % The time step is : 1.25e-05 
-                                    % Elapsed time is 0.057908 seconds.
+                                    % Elapsed time is 0.055547 seconds.
 % t = 2.500000e-04
 % t = 5.000000e-04
 % t = 1.000000e-03
 % The space step is : 2.50e-03 
 % The time step is : 3.13e-06 
-                                    % Elapsed time is 0.083846 seconds.
+                                    % Elapsed time is 0.072921 seconds.
 % t = 2.500000e-04
 % t = 5.000000e-04
 % t = 1.000000e-03
 % The space step is : 1.25e-03 
 % The time step is : 7.81e-07 
-                                    % Elapsed time is 0.229305 seconds.
+                                    % Elapsed time is 0.178409 seconds.
 % t = 2.500000e-04
 % t = 5.000000e-04
 % t = 1.000000e-03
 % The space step is : 6.25e-04 
 % The time step is : 1.95e-07 
-                                    % Elapsed time is 0.936351 seconds.
-% L2_c  : 1.95e-03 
-% L2_c  : 4.33e-04 
-% L2_c  : 1.04e-04 
-% L2_c  : 2.54e-05 
-% L2_c  : 6.31e-06 
-                                    % EOC_c : 2.17e+00 
-                                    % EOC_c : 2.06e+00 
+                                    % Elapsed time is 0.806509 seconds.
+% L2_c  : 4.19e-03 
+% L2_c  : 9.58e-04 
+% L2_c  : 2.34e-04 
+% L2_c  : 5.77e-05 
+% L2_c  : 1.44e-05 
+                                    % EOC_c : 2.13e+00 
                                     % EOC_c : 2.03e+00 
+                                    % EOC_c : 2.02e+00 
                                     % EOC_c : 2.01e+00 
-% L2_s  : 5.81e-05 
-% L2_s  : 1.44e-05 
-% L2_s  : 3.61e-06 
-% L2_s  : 9.01e-07 
-% L2_s  : 2.25e-07 
-                                    % EOC_s : 2.01e+00 
+% L2_s  : 5.66e-06 
+% L2_s  : 1.43e-06 
+% L2_s  : 3.58e-07 
+% L2_s  : 8.99e-08 
+% L2_s  : 2.25e-08 
+                                    % EOC_s : 1.99e+00 
+                                    % EOC_s : 1.99e+00 
                                     % EOC_s : 2.00e+00 
                                     % EOC_s : 2.00e+00 
-                                    % EOC_s : 2.00e+00 
-% total CT =  1.35e+00
+% total CT =  1.16e+00>> 
