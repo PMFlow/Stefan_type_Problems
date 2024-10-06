@@ -32,7 +32,7 @@ xs=0:dx:s0; is=length(xs);
 Ec0=Ec(0,xs); 
 c0(1:is)=Ec0; 
 for it=1:nT
-    t=it*dt;
+    t=(it*dt)/T;
     mx=Es(t); 
     xs=0:dx:mx; Ixs=length(xs); 
     Ec0=Ec(t,xs); 
@@ -40,15 +40,14 @@ for it=1:nT
     [c]=BGRW_1D(c0,I,dx,dt,q,D);
     c=c+fc*dt; 
     %% Boundary conditions
-    c(1)=sqrt(t); % left BC
-    % s′(t) = D*alpha/(t*exp(-alpha*s(t)))*c(s(t)); 
-    % -D*[c(is)-c(is-1)]/dx=sqrt(t)*c(t,s(t))*s'(t); % right BC 
-    % -D*[c(is)-c(is-1)]/dx=sqrt(t)*c(is)*D*alpha/(t*exp(-alpha*s0))*c(is); ===> 
-    c(is)=Ec0(is-1)-sqrt(t)*Ec0(is)*D*alpha/(t*exp(-alpha*s0))*Ec0(is)*dx/D; 
-    %(explicit linearization) -D*[c(is)-c(is-1)]/dx=a0*c(is)*[c(is)-\sigma];\sigma=sc/sig; ===> 
-    % c(is)=c(is-1)-sqrt(t)*c(is-1)*D*alpha/(t*exp(-alpha*s0))*c(is-1)*dx/D; 
+    c(1)=sqrt(t);   % left BC
+    % -D*[c(is)-c(is-1)]/dx=s′(t)*c(s(t))+f2;   % right BC 
+    % f2=D*alpha*c(s(t))-s′(t)*c(s(t)); ===> -D*[c(is)-c(is-1)]/dx=D*alpha*c(s(t)); ===> 
+    c(is)=Ec0(is-1)-alpha*Ec0(is)*dx;
     %% Diffusion front
-    sc(it)=s0+D*alpha/(t*exp(-alpha*s0))*c(is)*dt; % diffusion front
+    % s′(t)=D*alpha(c(s(t))-alpha*s(t))+f3; 
+    % f3=D*alpha/sqrt(t/T)-D*alpha(c(s(t))+alpha*s(t)); ===> 
+    sc(it)=s0+D*alpha/sqrt(t)*dt;   % diffusion front
     sEs(it)=Es(t); 
     is=round(sc(it)/dx);
     %
@@ -95,54 +94,53 @@ legend('$s(t)$','$\widetilde{s(t)}$','Interpreter','latex',Location='northwest',
 
 fprintf('total CT =  %0.2e',CT)
 
-%% main_Stef_kin_conv: iter = [100 200 400 800 1600]; s00 = 0.1; T=1;
-% main_Stef_kin_conv
+% main_Stef_kin_conv_new
 % t = 2.500000e-01
 % t = 5.000000e-01
 % t = 1
 % The space step is : 1.00e-02 
 % The time step is : 5.00e-05 
-                                    % Elapsed time is 0.294067 seconds.
+                                    % Elapsed time is 0.329548 seconds.
 % t = 2.500000e-01
 % t = 5.000000e-01
 % t = 1
 % The space step is : 5.00e-03 
 % The time step is : 1.25e-05 
-                                    % Elapsed time is 1.159260 seconds.
+                                    % Elapsed time is 1.115234 seconds.
 % t = 2.500000e-01
 % t = 5.000000e-01
 % t = 1
 % The space step is : 2.50e-03 
 % The time step is : 3.13e-06 
-                                    % Elapsed time is 7.333869 seconds.
+                                    % Elapsed time is 7.127107 seconds.
 % t = 2.500000e-01
 % t = 5.000000e-01
 % t = 1
 % The space step is : 1.25e-03 
 % The time step is : 7.81e-07 
-                                    % Elapsed time is 49.271622 seconds.
+                                    % Elapsed time is 44.907035 seconds.
 % t = 2.500000e-01
 % t = 5.000000e-01
 % t = 1
 % The space step is : 6.25e-04 
 % The time step is : 1.95e-07 
-                                    % Elapsed time is 420.742171 seconds.
+                                    % Elapsed time is 376.947213 seconds.
 % L2_c  : 1.39e-03 
 % L2_c  : 4.99e-04 
 % L2_c  : 1.78e-04 
-% L2_c  : 6.31e-05 
+% L2_c  : 6.32e-05 
 % L2_c  : 2.24e-05 
                                     % EOC_c : 1.48e+00 
                                     % EOC_c : 1.49e+00 
                                     % EOC_c : 1.49e+00 
                                     % EOC_c : 1.50e+00 
-% L2_s  : 8.97e-04 
-% L2_s  : 4.49e-04 
-% L2_s  : 2.25e-04 
-% L2_s  : 1.13e-04 
-% L2_s  : 5.63e-05 
+% L2_s  : 1.03e-03 
+% L2_s  : 5.15e-04 
+% L2_s  : 2.58e-04 
+% L2_s  : 1.29e-04 
+% L2_s  : 6.45e-05 
                                     % EOC_s : 9.97e-01 
                                     % EOC_s : 9.98e-01 
                                     % EOC_s : 9.99e-01 
                                     % EOC_s : 1.00e+00 
-% total CT =  4.79e+02
+% total CT =  4.30e+02
