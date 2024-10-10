@@ -1,4 +1,4 @@
-#### This folder contains the following Python (Jupyter notebook) code:
+#### This folder contains the following Python (Jupyter notebook) codes and data files:
 
 - 'GRWpaper_Rubber_FEM.ipynb' is the Python (Jupyter notebook) code to solve the rubber problem using finite element method and compare the numerical results with experimental data. To run this code: you first  launch Jupyter Notebook  and then you should open the .ipynb file and then run it by  clicking the "Run" button (or pressing Shift + Enter). It will save two .mat files for solution data, the first one is 'matlab_data_st_FEM_rubber1.mat' for the position of moving boundary s(t) and the second one is 'matlab_data_con_FEM_rubber1.mat' for the concentration profile m(x,t) at T = 31 minutes. These two solution .mat files are used to compare the solution with GRW and RW to produce Figure 2 in the manuscript (For more details, see the folder: Rubber). 
 
